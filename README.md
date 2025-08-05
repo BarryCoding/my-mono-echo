@@ -60,16 +60,22 @@ cursor .
 ```
 
 3. Learn monorepo with Turborepo
-  - create 2nd app widget by copying apps/web
   - (ignored) experiment [packages/math](https://turborepo.com/docs/crafting-your-repository/creating-an-internal-package)
-  - add new shadcn/ui components
 
+create 2nd app widget by copying apps/web
 ```bash
 # copy apps/web to apps/widget 
 # update widget package name and port
 
 # back to workspace root
 pnpm install
+```
+
+add new shadcn/ui components
+```bash
+# enter apps/web scaffold by shadcn
+cd apps/web
+pnpm dlx shadcn@2.9.2 add input
 ```
 
 4. Github repository
@@ -96,6 +102,8 @@ pnpm install
 11:48:47 End of Part 1
 
 ## TODO:
+
+- monorepo integrate the docs
 
 - documentation
   - pnpm
