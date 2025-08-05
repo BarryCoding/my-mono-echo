@@ -78,10 +78,27 @@ cd apps/web
 pnpm dlx shadcn@2.9.2 add input
 ```
 
-4. Github repository
+## 02 Convex as backend
+
+1. resolve lint error from build command
+
+```bash
+# only package eslint-config install @eslint/js with version consistency
+pnpm -F eslint-config add -D @eslint/js@9.20.1
+```
+
+2. setup convex
+   1. create an account
+   2. add convex internal package
+   3. run convex setup
+   4. create schema and functions
+3. github
+   1. commit changes
+   2. push changes
+   3. review and merge PullRequest
 
 
-38:23 02 Convex Package
+
 01:29:40 03 Clerk Authentication
 02:07:34 04 Organizations
 02:44:26 05 Error Tracking
