@@ -126,7 +126,15 @@ pnpm install
 4. modify paths of tsconfig.json and backend tsconfig.json
 5. experiment query and mutation in web
 
+### use convex in apps/widget
 
+> Don't forget the env variable used in provider
+
+1. add convex and @workspace/backend to dependencies 
+   1. `pnpm install`
+2. setup convex provider
+3. setup tsconfig.json
+4. experiment query and mutation in widget
 
 01:29:40 03 Clerk Authentication
 02:07:34 04 Organizations
