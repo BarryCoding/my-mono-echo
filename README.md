@@ -107,7 +107,10 @@ pnpm -F backend run setup
 ```
 
 4. create schema and functions
-
+   1. add `schema.ts` to create users table
+   2. root: `pnpm run dev`
+   3. add `users.ts`, try getMany
+   4. the schema and function are sync with convex dashboard
 
 
 2. github
