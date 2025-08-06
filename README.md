@@ -95,8 +95,18 @@ pnpm -F eslint-config add -D @eslint/js@9.20.1
 pnpm -F backend add convex
 ```
 
-2. run convex setup
-3. create schema and functions
+3. run convex setup
+   1. add setup script to its package.json
+
+```bash
+pnpm -F backend run setup
+# new project
+# my-echo-convex
+# cloud deployment 
+# -> check my convex dashboard
+```
+
+4. create schema and functions
 
 
 
