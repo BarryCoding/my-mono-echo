@@ -112,11 +112,19 @@ pnpm -F backend run setup
    3. add `users.ts`, try getMany
    4. the schema and function are sync with convex dashboard
 
+### use convex in apps/web
 
-2. github
-   1. commit changes
-   2. push changes
-   3. review and merge PullRequest
+```sh
+pnpm -F web add convex
+# add @workspace/backend
+pnpm install
+```
+
+1. add convex to dependencies
+2. add @workspace/backend to dependencies
+3. add convex provider
+4. modify paths of tsconfig.json and backend tsconfig.json
+5. experiment query and mutation in web
 
 
 
@@ -146,3 +154,5 @@ pnpm -F backend run setup
 - documentation
   - pnpm
 - price tag for all services
+  - convex: $25 / month
+  - code rabbit: $15 / month

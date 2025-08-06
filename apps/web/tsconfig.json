@@ -4,7 +4,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@workspace/ui/*": ["../../packages/ui/src/*"]
+      "@workspace/ui/*": ["../../packages/ui/src/*"],
+
+      /* sync with "paths" in packages/backend/tsconfig.json */
+      "@workspace/backend/*": ["../../packages/backend/convex/*"]
     },
     "plugins": [
       {
