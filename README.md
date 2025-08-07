@@ -179,14 +179,16 @@ pnpm install
     1. apps/web/components/providers.tsx ("use client")
 11. Wrap your app in Clerk and Convex
     1. apps/web/app/layout.tsx (server component)
-12. Show UI based on authentication state
+12. Show UI based on authentication state (UI auth)
     1. apps/web/app/page.tsx
-13. Use authentication state in your Convex functions
+13. Use authentication state in your Convex functions (backend auth: most reliable)
     1. packages/backend/convex/user.ts 
        1. try add user in widget (unauthenticated)
        2. try add user in web (authenticated)
 
 ### Using middleware
+
+> middleware auth is not reliable
 
 ```ts
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
@@ -220,6 +222,12 @@ export default clerkMiddleware(async (auth, req) => {
 })
 ```
 
+### group auth route
+
+- [Custom Sign in](https://clerk.com/docs/references/nextjs/custom-sign-in-or-up-page)
+- [Custom Sign Up](https://clerk.com/docs/references/nextjs/custom-sign-up-page)
+
+
 02:07:34 04 Organizations
 02:44:26 05 Error Tracking
 03:08:45 06 AI Voice Assistant
@@ -237,6 +245,7 @@ export default clerkMiddleware(async (auth, req) => {
 10:07:14 18 Dashboard Chat
 10:56:01 19 AI Tool Calling
 11:48:47 End of Part 1
+
 
 ## TODO:
 
