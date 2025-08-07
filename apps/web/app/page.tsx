@@ -10,6 +10,11 @@ import {
 } from "convex/react"
 import { SignInButton, UserButton } from "@clerk/nextjs"
 
+/**
+ * Renders the main page with user authentication and user management features.
+ *
+ * Displays a greeting, user list, and an "Add User" button for authenticated users, or a sign-in button for unauthenticated users.
+ */
 export default function Page() {
   const users = useQuery(api.users.getMany)
   const addUser = useMutation(api.users.add)
