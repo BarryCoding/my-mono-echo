@@ -186,7 +186,39 @@ pnpm install
        1. try add user in widget (unauthenticated)
        2. try add user in web (authenticated)
 
+### Using middleware
 
+```ts
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
+
+// public route explicit control
+const isPublicRoute = createRouteMatcher([
+  "/sign-in(.*)",
+  "/sign-up(.*)",
+  "/test-public(.*)",
+])
+
+export default clerkMiddleware(async (auth, req) => {
+  if (!isPublicRoute(req)) {
+    await auth.protect()
+  }
+})
+```
+
+```ts
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
+
+// private route explicit control
+const isPrivateRoute = createRouteMatcher([
+  "/test-private(.*)",
+])
+
+export default clerkMiddleware(async (auth, req) => {
+  if (isPrivateRoute(req)) {
+    await auth.protect()
+  }
+})
+```
 
 02:07:34 04 Organizations
 02:44:26 05 Error Tracking
