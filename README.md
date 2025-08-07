@@ -83,8 +83,11 @@ pnpm dlx shadcn@2.9.2 add input
 1. resolve lint error from build command
 
 ```bash
-# only package eslint-config install @eslint/js with version consistency
-pnpm -F eslint-config add -D @eslint/js@9.20.1
+pnpm view eslint@9.20.1 
+# output: @eslint/js: 9.20.0 
+
+# package eslint-config install @eslint/js with version consistency
+pnpm -F eslint-config add -D @eslint/js@9.20.0
 ```
 
 2. add convex internal package
@@ -136,7 +139,95 @@ pnpm install
 3. setup tsconfig.json
 4. experiment query and mutation in widget
 
-01:29:40 03 Clerk Authentication
+## [Clerk Authentication](https://clerk.com/)
+
+- login with github
+
+### [Clerk Dashboard](https://dashboard.clerk.com/apps)
+
+1. Create application
+   1. Application name: Echo
+   2. Options: Email, Google and Github
+   3. Create application -> Echo App Overview
+
+### [Convex auth w/ Clerk for Next.js Documentation](https://docs.convex.dev/auth/clerk#nextjs)
+
+1. Done: Sign up for Clerk
+2. Done: Create an application in Clerk
+3. Create a JWT Template in Echo App configure
+   1. change template to 'convex'
+   2. copy `Issuer URL`
+4. Set the `Issuer URL` in your env vars
+   1. apps/web/.env.local
+   2. key: NEXT_PUBLIC_CLERK_FRONTEND_API_URL
+   3. value: `Issuer URL`
+5. Configure Convex with the Clerk issuer domain
+   1. packages/backend/convex/auth.config.ts
+   2. add `"@types/node": "^20",` to backend package
+   3. setup env for local backend CLERK_JWT_ISSUER_DOMAIN
+   4. setup env for convex app Settings -> Environment Variables
+6. Deploy your changes
+   1. root: `pnpm run dev`
+   2. sync with remote convex
+7. Install clerk (apps/web only)
+   1. `pnpm -F web add @clerk/nextjs`
+8. Set your Clerk API keys
+   1. apps/web/.env.local
+9. Add Clerk middleware
+   1. apps/web/middleware.ts
+10. Configure ConvexProviderWithClerk
+    1. apps/web/components/providers.tsx ("use client")
+11. Wrap your app in Clerk and Convex
+    1. apps/web/app/layout.tsx (server component)
+12. Show UI based on authentication state (UI auth)
+    1. apps/web/app/page.tsx
+13. Use authentication state in your Convex functions (backend auth: most reliable)
+    1. packages/backend/convex/user.ts 
+       1. try add user in widget (unauthenticated)
+       2. try add user in web (authenticated)
+
+### Using middleware
+
+> middleware auth is not reliable
+
+```ts
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
+
+// public route explicit control
+const isPublicRoute = createRouteMatcher([
+  "/sign-in(.*)",
+  "/sign-up(.*)",
+  "/test-public(.*)",
+])
+
+export default clerkMiddleware(async (auth, req) => {
+  if (!isPublicRoute(req)) {
+    await auth.protect()
+  }
+})
+```
+
+```ts
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
+
+// private route explicit control
+const isPrivateRoute = createRouteMatcher([
+  "/test-private(.*)",
+])
+
+export default clerkMiddleware(async (auth, req) => {
+  if (isPrivateRoute(req)) {
+    await auth.protect()
+  }
+})
+```
+
+### group auth route
+
+- [Custom Sign in](https://clerk.com/docs/references/nextjs/custom-sign-in-or-up-page)
+- [Custom Sign Up](https://clerk.com/docs/references/nextjs/custom-sign-up-page)
+
+
 02:07:34 04 Organizations
 02:44:26 05 Error Tracking
 03:08:45 06 AI Voice Assistant
@@ -154,6 +245,7 @@ pnpm install
 10:07:14 18 Dashboard Chat
 10:56:01 19 AI Tool Calling
 11:48:47 End of Part 1
+
 
 ## TODO:
 
