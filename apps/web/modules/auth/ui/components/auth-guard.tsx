@@ -1,9 +1,8 @@
 "use client"
 
-import { useAuth } from "@clerk/nextjs"
 import { Authenticated, AuthLoading, Unauthenticated } from "convex/react"
-import { AuthLayout } from "../layouts/auth-layout"
-import { SignInView } from "../views/sign-in-view"
+import { AuthLayout } from "@/modules/auth/ui/layouts/auth-layout"
+import { SignInView } from "@/modules/auth/ui/views/sign-in-view"
 
 export function AuthGuard({ children }: { children: React.ReactNode }) {
   return (

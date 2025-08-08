@@ -239,9 +239,12 @@ export default clerkMiddleware(async (auth, req) => {
 
 ### Enable organizations
 
-- [ ] page org-selection
-- [ ] OrganizationGuard
-- [ ] Limit members count
+1. clerk app dashboard -> Organizations tab -> configure 
+   1. enable organizations
+   2. edit **Limited membership** to 1
+2. organization-guard
+   1. enforce to create organization if user has no organization
+3. organization-select-view
 
 ### middleware for org
 
