@@ -228,7 +228,34 @@ export default clerkMiddleware(async (auth, req) => {
 - [Custom Sign Up](https://clerk.com/docs/references/nextjs/custom-sign-up-page)
 
 
-02:07:34 04 Organizations
+## Organizations
+
+- auth module
+
+### AuthGuard
+
+1. Authorized and Unauthorized
+2. Wrap (dashboard)/layout.tsx
+
+### Enable organizations
+
+1. clerk app dashboard -> Organizations tab -> configure 
+   1. enable organizations
+   2. edit **Limited membership** to 1
+2. organization-guard
+   1. enforce to create organization if user has no organization
+3. organization-select-view
+
+### middleware for org
+
+1. organization select page
+2. isOrganizationPublicRoute in middleware with redirect
+
+### guard in backend
+
+1. clerk app dashboard -> configure -> JWT templates
+   1. claim add `"orgId": "{{org.id}}",`
+
 02:44:26 05 Error Tracking
 03:08:45 06 AI Voice Assistant
 03:37:48 07 Dashboard Layout
