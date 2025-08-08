@@ -251,6 +251,11 @@ export default clerkMiddleware(async (auth, req) => {
 1. organization select page
 2. isOrganizationPublicRoute in middleware with redirect
 
+### guard in backend
+
+1. clerk app dashboard -> configure -> JWT templates
+   1. claim add `"orgId": "{{org.id}}",`
+
 02:44:26 05 Error Tracking
 03:08:45 06 AI Voice Assistant
 03:37:48 07 Dashboard Layout
