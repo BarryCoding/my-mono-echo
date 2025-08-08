@@ -228,7 +228,22 @@ export default clerkMiddleware(async (auth, req) => {
 - [Custom Sign Up](https://clerk.com/docs/references/nextjs/custom-sign-up-page)
 
 
-02:07:34 04 Organizations
+## Organizations
+
+- auth module
+
+### AuthGuard
+
+1. Authorized and Unauthorized
+- Wrap (dashboard)/layout.tsx
+
+### Enable organizations
+- page org-selection
+- OrganizationGuard
+- Limit members count
+
+### middleware for org
+
 02:44:26 05 Error Tracking
 03:08:45 06 AI Voice Assistant
 03:37:48 07 Dashboard Layout
