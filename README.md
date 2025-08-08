@@ -235,12 +235,13 @@ export default clerkMiddleware(async (auth, req) => {
 ### AuthGuard
 
 1. Authorized and Unauthorized
-- Wrap (dashboard)/layout.tsx
+2. Wrap (dashboard)/layout.tsx
 
 ### Enable organizations
-- page org-selection
-- OrganizationGuard
-- Limit members count
+
+- [ ] page org-selection
+- [ ] OrganizationGuard
+- [ ] Limit members count
 
 ### middleware for org
 
