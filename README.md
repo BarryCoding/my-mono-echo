@@ -248,6 +248,9 @@ export default clerkMiddleware(async (auth, req) => {
 
 ### middleware for org
 
+1. organization select page
+2. isOrganizationPublicRoute in middleware with redirect
+
 02:44:26 05 Error Tracking
 03:08:45 06 AI Voice Assistant
 03:37:48 07 Dashboard Layout
