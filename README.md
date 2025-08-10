@@ -256,7 +256,18 @@ export default clerkMiddleware(async (auth, req) => {
 1. clerk app dashboard -> configure -> JWT templates
    1. claim add `"orgId": "{{org.id}}",`
 
-02:44:26 05 Error Tracking
+## Error Tracking
+
+### Create an error scenario
+
+- throw error when add user
+
+### track error in convex dashboard
+
+- convex dashboard -> project -> functions -> user add
+
+- [ ] integrate sentry to convex
+
 03:08:45 06 AI Voice Assistant
 03:37:48 07 Dashboard Layout
 04:12:24 08 Theme
