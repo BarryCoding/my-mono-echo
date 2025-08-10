@@ -256,7 +256,48 @@ export default clerkMiddleware(async (auth, req) => {
 1. clerk app dashboard -> configure -> JWT templates
    1. claim add `"orgId": "{{org.id}}",`
 
-02:44:26 05 Error Tracking
+## Error Tracking
+
+### Create an error scenario
+
+- throw error when add user
+
+### track error in convex dashboard
+
+- convex dashboard -> project -> functions -> user add
+
+### [integrate sentry in apps/web](https://docs.sentry.io/platforms/javascript/guides/nextjs/)
+
+```sh
+cd apps/web
+
+pnpm dlx @sentry/wizard@latest -i nextjs
+# continue yes
+# sentry sass
+# account yes -> redirect to browser -> new project "echo"
+# PNPM
+# yes yes yes
+```
+
+1. apps/web: add `.env.sentry-build-plugin` to `.gitignore`
+2. apps/web: remove `--turbopack` in scripts
+
+```sh
+# root
+pnpm install
+
+pnpm run dev
+```
+
+3. go to http://localhost:3000/sentry-example-page
+   1. throw sample error -> error sent to sentry
+4. back to sentry dashboard refresh and track errors
+
+### integrate convex to sentry
+
+- convex project dashboard -> setting -> integrations
+  - convex pro plan ? -> pending
+
 03:08:45 06 AI Voice Assistant
 03:37:48 07 Dashboard Layout
 04:12:24 08 Theme
