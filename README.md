@@ -293,6 +293,11 @@ pnpm run dev
    1. throw sample error -> error sent to sentry
 4. back to sentry dashboard refresh and track errors
 
+### integrate convex to sentry
+
+- convex project dashboard -> setting -> integrations
+  - convex pro plan ? -> pending
+
 03:08:45 06 AI Voice Assistant
 03:37:48 07 Dashboard Layout
 04:12:24 08 Theme
