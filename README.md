@@ -328,7 +328,22 @@ pnpm -F widget add @vapi-ai/web
   - use-vapi.ts
 - testing agent from widget page using client SDK
 
-03:37:48 07 Dashboard Layout
+## Web Dashboard Layout
+
+### Add shadcn/ui components
+
+```sh
+cd apps/web
+pnpm dlx shadcn@2.9.2 add --all
+```
+
+- create a dashboard layout
+  - Sidebar
+  - Sidebar group
+  - UserButton 
+  - OrgSwitcher
+  - Create empty pages
+
 04:12:24 08 Theme
 04:25:02 09 Widget Layout
 04:42:58 10 Widget Session
