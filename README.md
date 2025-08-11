@@ -357,7 +357,13 @@ pnpm dlx shadcn@2.9.2 add --all
 - Account
   - /billing
 
-04:12:24 08 Theme
+## Theme
+
+> theme resources [tweakcn](https://tweakcn.com/)
+
+- modify globals.css
+- modify sidebar active style
+
 04:25:02 09 Widget Layout
 04:42:58 10 Widget Session
 05:24:13 11 Widget Screen Router
