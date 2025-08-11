@@ -318,6 +318,15 @@ pnpm run dev
 5. Test talking to the Tom
 6. Assign a Phone Number to an Tom
 
+### Widget using vapi SDK
+
+```sh
+pnpm -F widget add @vapi-ai/web
+```
+
+- widget module
+  - use-vapi.ts
+- testing agent from widget page using client SDK
 
 03:37:48 07 Dashboard Layout
 04:12:24 08 Theme
