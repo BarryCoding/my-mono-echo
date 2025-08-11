@@ -298,7 +298,36 @@ pnpm run dev
 - convex project dashboard -> setting -> integrations
   - convex pro plan ? -> pending
 
-03:08:45 06 AI Voice Assistant
+## AI Voice Assistant
+
+### create a Vapi account
+
+- sign up with github
+- read [Vapi documentation guide](https://docs.vapi.ai/guides)
+
+### vapi Inbound customer support
+
+> follow steps of [inbound support example](https://docs.vapi.ai/assistants/examples/inbound-support)
+
+1. Create a knowledge base
+   1. download `transactions.scv` and `accounts.scv`
+   2. upload the **files** in vapi dashboard
+2. Create an assistant (Tom)
+3. Configure the assistant
+4. Add Tools to an Assistant
+5. Test talking to the Tom
+6. Assign a Phone Number to an Tom
+
+### Widget using vapi SDK
+
+```sh
+pnpm -F widget add @vapi-ai/web
+```
+
+- widget module
+  - use-vapi.ts
+- testing agent from widget page using client SDK
+
 03:37:48 07 Dashboard Layout
 04:12:24 08 Theme
 04:25:02 09 Widget Layout
@@ -319,8 +348,7 @@ pnpm run dev
 
 - monorepo integrate the docs
 
-- documentation
-  - pnpm
 - price tag for all services
   - convex: $25 / month
   - code rabbit: $15 / month
+  - sentry $29 / month (team)
