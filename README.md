@@ -337,13 +337,25 @@ cd apps/web
 pnpm dlx shadcn@2.9.2 add --all
 ```
 
-- create a dashboard
-  - layout
-  - sidebar
-    - header: OrganizationSwitcher
-    - content: Sidebar group
-    - footer: UserButton
-- [ ] Create empty pages
+### create a dashboard
+
+- layout
+- sidebar
+  - header: OrganizationSwitcher
+  - content: Sidebar group
+  - footer: UserButton
+
+### Create empty pages
+
+- Customer Support
+  - /conversations
+  - /files
+- Configuration
+  - /customization
+  - /integrations
+  - /plugins/vapi
+- Account
+  - /billing
 
 04:12:24 08 Theme
 04:25:02 09 Widget Layout
