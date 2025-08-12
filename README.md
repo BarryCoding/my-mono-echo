@@ -364,7 +364,14 @@ pnpm dlx shadcn@2.9.2 add --all
 - modify globals.css
 - modify sidebar active style
 
-04:25:02 09 Widget Layout
+## Widget Layout
+
+- views
+  - widget-view
+- components
+  - widget-header
+  - widget-footer
+
 04:42:58 10 Widget Session
 05:24:13 11 Widget Screen Router
 05:34:32 12 Widget Loading
