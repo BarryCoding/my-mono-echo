@@ -379,7 +379,13 @@ pnpm dlx shadcn@2.9.2 add --all
 - fix zod and resolver conflicts
 - widget auth screen
 
-05:24:13 11 Widget Screen Router
+## Widget Screen Router
+
+- add jotai `pnpm -F widget add jotai` and its Provider
+- [ ] create widget atoms
+- [ ] define screens
+- [ ] create screen router
+
 05:34:32 12 Widget Loading
 06:29:43 13 Conversations
 07:00:58 14 AI Agents
