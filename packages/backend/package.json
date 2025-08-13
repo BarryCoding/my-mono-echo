@@ -6,11 +6,12 @@
     "dev": "convex dev"
   },
   "dependencies": {
+    "@clerk/backend": "^2.7.1",
     "convex": "^1.25.4"
   },
   "devDependencies": {
-    "@workspace/typescript-config": "workspace:*",
     "@types/node": "^20",
+    "@workspace/typescript-config": "workspace:*",
     "typescript": "^5.7.3"
   }
 }

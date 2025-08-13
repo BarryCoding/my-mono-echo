@@ -389,9 +389,11 @@ pnpm dlx shadcn@2.9.2 add --all
 ## Widget Loading
 
 - error screen
-- [ ] convex functions
-  - [ ] organizations.getOne
-  - [ ] contactSession.validate
+- convex functions
+  - contactSession.validate
+  - organizations.validate 
+    - `pnpm -F backend add @clerk/backend`
+    - CLERK_SECRET_KEY (local and clerk dashboard setting)
 - [ ] loading screen
   - [ ] load organization and verify
   - [ ] load contact and verify
