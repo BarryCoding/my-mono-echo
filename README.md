@@ -382,9 +382,9 @@ pnpm dlx shadcn@2.9.2 add --all
 ## Widget Screen Router
 
 - add jotai `pnpm -F widget add jotai` and its Provider
-- [ ] create widget atoms
-- [ ] define screens
-- [ ] create screen router
+- create widget atoms
+- define screens
+- create screen router
 
 05:34:32 12 Widget Loading
 06:29:43 13 Conversations

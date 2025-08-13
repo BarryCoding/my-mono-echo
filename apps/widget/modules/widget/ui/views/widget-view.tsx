@@ -1,15 +1,30 @@
 "use client"
 
-import { WidgetAuthScreen } from "../screens/widget-auth-screen"
+import { useAtomValue } from "jotai"
+import { screenAtom } from "@/modules/widget/atoms/widget-atoms"
+import { WidgetAuthScreen } from "@/modules/widget/ui/screens/widget-auth-screen"
+import type { WidgetScreen } from "@/modules/widget/types"
 
 interface Props {
   organizationId: string | null
 }
 
 export const WidgetView = ({ organizationId }: Props) => {
+  const screen = useAtomValue(screenAtom)
+
+  const screenComponents: Record<WidgetScreen, React.ReactNode> = {
+    loading: <p>Loading...</p>,
+    error: <p>Error</p>,
+    auth: <WidgetAuthScreen />,
+    voice: <p>TODO: Voice</p>,
+    inbox: <p>TODO: Inbox</p>,
+    selection: <p>TODO: Selection</p>,
+    chat: <p>TODO: Chat</p>,
+    contact: <p>TODO: Contact</p>,
+  }
   return (
     <main className="min-h-screen min-w-screen flex h-full w-full flex-col overflow-hidden rounded-xl border bg-muted">
-      <WidgetAuthScreen />
+      {screenComponents[screen]}
     </main>
   )
 }
