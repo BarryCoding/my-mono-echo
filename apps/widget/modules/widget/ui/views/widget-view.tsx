@@ -4,6 +4,7 @@ import { useAtomValue } from "jotai"
 import { screenAtom } from "@/modules/widget/atoms/widget-atoms"
 import { WidgetAuthScreen } from "@/modules/widget/ui/screens/widget-auth-screen"
 import { WidgetErrorScreen } from "@/modules/widget/ui/screens/widget-error-screen"
+import { WidgetLoadingScreen } from "@/modules/widget/ui/screens/widget-loading-screen"
 import type { WidgetScreen } from "@/modules/widget/types"
 
 interface Props {
@@ -14,7 +15,7 @@ export const WidgetView = ({ organizationId }: Props) => {
   const screen = useAtomValue(screenAtom)
 
   const screenComponents: Record<WidgetScreen, React.ReactNode> = {
-    loading: <p>Loading...</p>,
+    loading: <WidgetLoadingScreen organizationId={organizationId} />,
     error: <WidgetErrorScreen />,
     auth: <WidgetAuthScreen />,
     voice: <p>TODO: Voice</p>,

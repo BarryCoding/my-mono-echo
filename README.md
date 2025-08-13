@@ -395,7 +395,7 @@ pnpm dlx shadcn@2.9.2 add --all
     - `pnpm -F backend add @clerk/backend`
     - CLERK_SECRET_KEY (local and clerk dashboard setting)
 - [ ] loading screen
-  - [ ] load organization and verify
+  - load organization and verify
   - [ ] load contact and verify
 
 06:29:43 13 Conversations
