@@ -386,7 +386,16 @@ pnpm dlx shadcn@2.9.2 add --all
 - define screens
 - create screen router
 
-05:34:32 12 Widget Loading
+## Widget Loading
+
+- error screen
+- [ ] convex functions
+  - [ ] organizations.getOne
+  - [ ] contactSession.validate
+- [ ] loading screen
+  - [ ] load organization and verify
+  - [ ] load contact and verify
+
 06:29:43 13 Conversations
 07:00:58 14 AI Agents
 08:10:11 15 Infinite Scroll
