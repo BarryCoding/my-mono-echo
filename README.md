@@ -372,7 +372,13 @@ pnpm dlx shadcn@2.9.2 add --all
   - widget-header
   - widget-footer
 
-04:42:58 10 Widget Session
+## Widget Session
+
+- contactSession table
+- contactSession functions
+- fix zod and resolver conflicts
+- widget auth screen
+
 05:24:13 11 Widget Screen Router
 05:34:32 12 Widget Loading
 06:29:43 13 Conversations
