@@ -14,3 +14,5 @@ export default function Page({ searchParams }: Props) {
 
   return <WidgetView organizationId={organizationId} />
 }
+
+// http://localhost:3020/?organizationId=org_30z0nhyL8nUzSM41tsKHYSlCgdX

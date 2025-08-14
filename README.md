@@ -394,9 +394,9 @@ pnpm dlx shadcn@2.9.2 add --all
   - organizations.validate 
     - `pnpm -F backend add @clerk/backend`
     - CLERK_SECRET_KEY (local and clerk dashboard setting)
-- [ ] loading screen
+- loading screen
   - load organization and verify
-  - [ ] load contact and verify
+  - load contactSession(under organization) and verify
 
 06:29:43 13 Conversations
 07:00:58 14 AI Agents

@@ -8,6 +8,7 @@ import {
   loadingMessageAtom,
   organizationIdAtom,
   screenAtom,
+  contactSessionIdAtomFamily,
 } from "@/modules/widget/atoms/widget-atoms"
 import { WidgetHeader } from "@/modules/widget/ui/components/widget-header"
 import { useAction, useMutation } from "convex/react"
@@ -28,6 +29,11 @@ export const WidgetLoadingScreen = ({
   const setOrganizationId = useSetAtom(organizationIdAtom)
   const setErrorMessage = useSetAtom(errorMessageAtom)
   const setScreen = useSetAtom(screenAtom)
+
+  const [sessionValid, setSessionValid] = useState(false)
+  const contactSessionId = useAtomValue(
+    contactSessionIdAtomFamily(organizationId || ""),
+  )
 
   // Step 1: Validate organization
   const validateOrganization = useAction(api.public.organizations.validate)
@@ -71,7 +77,44 @@ export const WidgetLoadingScreen = ({
     setLoadingMessage,
   ])
 
-  // TODO: step
+  // Step 2: Validate session (if exists)
+  const validateContactSession = useMutation(
+    api.public.contactSessions.validate,
+  )
+  useEffect(() => {
+    if (step !== "session") {
+      return
+    }
+
+    setLoadingMessage("Finding contact session ID...")
+
+    if (!contactSessionId) {
+      setSessionValid(false)
+      setStep("done")
+      return
+    }
+
+    setLoadingMessage("Validating session...")
+
+    validateContactSession({ contactSessionId })
+      .then((result) => {
+        setSessionValid(result.valid)
+        setStep("done")
+      })
+      .catch(() => {
+        setSessionValid(false)
+        setStep("done")
+      })
+  }, [step, contactSessionId, validateContactSession, setLoadingMessage])
+
+  useEffect(() => {
+    if (step !== "done") {
+      return
+    }
+
+    const hasValidSession = contactSessionId && sessionValid
+    setScreen(hasValidSession ? "selection" : "auth")
+  }, [step, contactSessionId, sessionValid, setScreen])
 
   return (
     <>
