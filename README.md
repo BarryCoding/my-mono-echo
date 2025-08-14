@@ -404,7 +404,8 @@ pnpm dlx shadcn@2.9.2 add --all
   - conversation schema
   - conversation functions
 - frontend widget 
-  - [ ] selection screen
+  - selection screen
+  - [ ] chat screen
 
 07:00:58 14 AI Agents
 08:10:11 15 Infinite Scroll
