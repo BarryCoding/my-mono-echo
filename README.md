@@ -386,7 +386,18 @@ pnpm dlx shadcn@2.9.2 add --all
 - define screens
 - create screen router
 
-05:34:32 12 Widget Loading
+## Widget Loading
+
+- error screen
+- convex functions
+  - contactSession.validate
+  - organizations.validate 
+    - `pnpm -F backend add @clerk/backend`
+    - CLERK_SECRET_KEY (local and clerk dashboard setting)
+- loading screen
+  - load organization and verify
+  - load contactSession(under organization) and verify
+
 06:29:43 13 Conversations
 07:00:58 14 AI Agents
 08:10:11 15 Infinite Scroll
