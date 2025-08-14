@@ -398,7 +398,15 @@ pnpm dlx shadcn@2.9.2 add --all
   - load organization and verify
   - load contactSession(under organization) and verify
 
-06:29:43 13 Conversations
+## Conversations
+
+- backend convex
+  - conversation schema
+  - conversation functions
+- frontend widget 
+  - selection screen
+  - chat screen
+
 07:00:58 14 AI Agents
 08:10:11 15 Infinite Scroll
 08:39:59 16 Widget Inbox
