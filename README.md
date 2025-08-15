@@ -426,9 +426,10 @@ pnpm -F backend add @ai-sdk/openai@1.3.23
 - choose ai provider @ai-sdk/openai@1.3.23
   - add apiKey to backend and convex cloud
 
+- delete all old conversations in convex cloud
+- conversation.create with threadId from supportAgent
 
-- delete all old conversations
-- conversation.create
+
 - ai components (kibo-ui)
 - messages functions
   - internal functions 
