@@ -407,7 +407,43 @@ pnpm dlx shadcn@2.9.2 add --all
   - selection screen
   - chat screen
 
-07:00:58 14 AI Agents
+## AI Agents
+
+### follow [convex agent](https://docs.convex.dev/agents/getting-started)
+
+```sh
+pnpm -F backend add @convex-dev/agent
+```
+
+- Create a convex.config.ts file
+
+```sh
+# make sure the versions are consistent
+pnpm -F backend add ai@4.3.19
+pnpm -F backend add @ai-sdk/openai@1.3.23
+```
+
+- choose ai provider @ai-sdk/openai@1.3.23
+  - add apiKey to backend and convex cloud
+
+- delete all old conversations in convex cloud
+- conversation.create with threadId from supportAgent
+
+### [Kibo UI](https://www.kibo-ui.com/)
+
+- ui packages ai components
+
+### convex system for messages
+
+- messages functions
+  - internal functions 
+
+### widget chat messages 
+
+- apps/widget
+  - `pnpm -F widget add @convex-dev/agent`
+  - chat interface
+
 08:10:11 15 Infinite Scroll
 08:39:59 16 Widget Inbox
 09:11:20 17 Dashboard Inbox
