@@ -39,6 +39,9 @@ import {
   AISuggestions,
 } from "@workspace/ui/components/ai/suggestion"
 import { toUIMessages, useThreadMessages } from "@convex-dev/agent/react"
+import { useInfiniteScroll } from "@workspace/ui/hooks/use-infinite-scroll"
+import { InfiniteScrollTrigger } from "@workspace/ui/components/infinite-scroll-trigger"
+import { DicebearAvatar } from "@workspace/ui/components/dicebear-avatar"
 
 const formSchema = z.object({
   message: z.string().min(1, "Message is required"),
@@ -74,6 +77,13 @@ export const WidgetChatScreen = () => {
       : "skip",
     { initialNumItems: 10 },
   )
+
+  const { topElementRef, handleLoadMore, canLoadMore, isLoadingMore } =
+    useInfiniteScroll({
+      status: messages.status,
+      loadMore: messages.loadMore,
+      loadSize: 10,
+    })
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -119,7 +129,12 @@ export const WidgetChatScreen = () => {
 
       <AIConversation>
         <AIConversationContent>
-          {/* TODO: infinite scroll */}
+          <InfiniteScrollTrigger
+            canLoadMore={canLoadMore}
+            isLoadingMore={isLoadingMore}
+            onLoadMore={handleLoadMore}
+            ref={topElementRef}
+          />
           {toUIMessages(messages.results ?? [])?.map((message) => {
             return (
               <AIMessage
@@ -129,7 +144,13 @@ export const WidgetChatScreen = () => {
                 <AIMessageContent>
                   <AIResponse>{message.content}</AIResponse>
                 </AIMessageContent>
-                {/* TODO: add avatar */}
+                {message.role === "assistant" && (
+                  <DicebearAvatar
+                    imageUrl="/logo.svg"
+                    seed="assistant"
+                    size={32}
+                  />
+                )}
               </AIMessage>
             )
           })}

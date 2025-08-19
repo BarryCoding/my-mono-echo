@@ -444,7 +444,18 @@ pnpm -F backend add @ai-sdk/openai@1.3.23
   - `pnpm -F widget add @convex-dev/agent`
   - chat interface
 
-08:10:11 15 Infinite Scroll
+## Infinite Scroll
+
+- useInfiniteScroll
+- InfiniteScrollTrigger
+- Chat Avatar component
+
+[logoipsum resource](https://logoipsum.com/)
+
+```sh
+pnpm -F ui add @dicebear/collection @dicebear/core
+```
+
 08:39:59 16 Widget Inbox
 09:11:20 17 Dashboard Inbox
 10:07:14 18 Dashboard Chat
