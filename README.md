@@ -433,9 +433,15 @@ pnpm -F backend add @ai-sdk/openai@1.3.23
 
 - ui packages ai components
 
+### convex system for messages
 
 - messages functions
   - internal functions 
+
+### widget chat messages 
+<!-- todo -->
+- apps/widget
+  - `pnpm -F widget add @convex-dev/agent`
 
 08:10:11 15 Infinite Scroll
 08:39:59 16 Widget Inbox
