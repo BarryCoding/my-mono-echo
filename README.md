@@ -456,7 +456,16 @@ pnpm -F backend add @ai-sdk/openai@1.3.23
 pnpm -F ui add @dicebear/collection @dicebear/core
 ```
 
-08:39:59 16 Widget Inbox
+## Widget Inbox
+
+```sh
+pnpm -F widget add date-fns
+```
+
+- conversations.getMany
+- WidgetInboxScreen
+- ConversationStatusIcon
+
 09:11:20 17 Dashboard Inbox
 10:07:14 18 Dashboard Chat
 10:56:01 19 AI Tool Calling
