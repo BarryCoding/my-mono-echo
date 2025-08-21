@@ -466,7 +466,16 @@ pnpm -F widget add date-fns
 - WidgetInboxScreen
 - ConversationStatusIcon
 
-09:11:20 17 Dashboard Inbox
+## Dashboard Inbox
+
+```sh
+pnpm -F web add date-fns jotai countries-and-timezones
+```
+
+- conversationsLayout
+- conversationsPanel
+- conversations.getMany (private)
+
 10:07:14 18 Dashboard Chat
 10:56:01 19 AI Tool Calling
 11:48:47 End of Part 1
