@@ -476,7 +476,14 @@ pnpm -F web add date-fns jotai countries-and-timezones
 - conversationsPanel
 - conversations.getMany (private)
 
-10:07:14 18 Dashboard Chat
+## Dashboard Chat
+
+- jotai provider
+- ConversationsView
+- [ ] ConversationIdView
+- [ ] messages function
+- [ ] conversations functions
+
 10:56:01 19 AI Tool Calling
 11:48:47 End of Part 1
 
