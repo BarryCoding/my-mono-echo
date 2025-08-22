@@ -480,9 +480,9 @@ pnpm -F web add date-fns jotai countries-and-timezones
 
 - jotai provider
 - ConversationsView
-- [ ] ConversationIdView
-- [ ] messages function
-- [ ] conversations functions
+- ConversationIdView `pnpm -F web add @convex-dev/agent zod react-hook-form @hookform/resolvers`
+- conversations functions
+- messages function
 
 10:56:01 19 AI Tool Calling
 11:48:47 End of Part 1
