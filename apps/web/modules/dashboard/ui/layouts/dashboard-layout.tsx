@@ -3,6 +3,7 @@ import { OrganizationGuard } from "@/modules/auth/ui/components/organization-gua
 import { DashboardSidebar } from "@/modules/dashboard/ui/components/dashboard-sidebar"
 import { SidebarProvider } from "@workspace/ui/components/sidebar"
 import { cookies } from "next/headers"
+import { Provider as JotaiProvider } from "jotai"
 
 export async function DashboardLayout({
   children,
@@ -15,10 +16,12 @@ export async function DashboardLayout({
   return (
     <AuthGuard>
       <OrganizationGuard>
-        <SidebarProvider defaultOpen={defaultOpen}>
-          <DashboardSidebar />
-          <main className="flex flex-1 flex-col">{children}</main>
-        </SidebarProvider>
+        <JotaiProvider>
+          <SidebarProvider defaultOpen={defaultOpen}>
+            <DashboardSidebar />
+            <main className="flex flex-1 flex-col">{children}</main>
+          </SidebarProvider>
+        </JotaiProvider>
       </OrganizationGuard>
     </AuthGuard>
   )
